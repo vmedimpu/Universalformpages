@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <style type="text/css">
+    
+
+.form-details-main {
+    width: 100%;
+    display: block;
+}
+
+.form-details-left {
+ 
+  width: calc(30% - 10px);
+  float: left;
+  overflow-y: auto;
+}
+
+.form-details-right {
+height: 400px;
+    width: calc(65% - 30px);
+    float: right;
+  
+}
+
+.form-details-nav{
+    border: 0px solid #ddd;
+    margin: 10px;
+    box-shadow: 0px 0px 0px 0px #ddd;
+    padding: 20px;
+   
+}
+
+.form-details-w-75 {
+    width: 40%!important;
+    margin-top: 1%;
+    margin-left: 30%;
+}
+
+.main-container {
+    max-width: 2000px; 
+    min-height: 400px;
+   
+    /* background: linear-gradient(-135deg, #c850c0, #4158d0); 
+    display: flex;*/
+    justify-content: center;
+    align-items: center;
+    
+
+}
+.form-table-right{
+    display: table-row;
+}
+.form-table-left{
+    display: table-row;
+
+}
+.button{
+    border-radius: 2px;
+    padding: 5px 15px;
+    background-color: #316bbe;
+    border-color: #316bbe;
+    color: #fff;
+    -webkit-tap-highlight-color: transparent;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 250px;
+    margin-top:30px;
+    margin-bottom:20px;
+}
+.form-button{
+border-radius: 2px;
+padding: 5px 15px;
+background-color: #316bbe;
+border-color: #316bbe;
+color: #fff;
+-webkit-tap-highlight-color: transparent;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+.popup {
+    background:#fff;
+    width:300px;
+    display:none;
+}
+
+
+.text{
+	font-family: Roboto,Arial,sans-serif;
+    color: #616161;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+	font-size: 15px;
+}
+
+.heading{
+	font-family: Roboto,Arial,sans-serif;
+    color: #616161;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+	font-size: 32px;
+	    font-weight: lighter;
+}
+.a{
+	    cursor: pointer;
+    color: #1976d2;
+    text-decoration: none;
+}
+    </style>
+</head>
+
+<body>
+<div class="main-container">
+ <div class="form-details-left form-details-nav text" id="div1">
+
+ 
+</div>
+
+<div class="form-details-right form-details-nav">
+       
+         
+         <tr>
+                 <td>
+                     <div style="width: 700px">
+                         <h1 class="heading">UnitedHealthcare Community Plan (Medicaid) Pre-Service Appeals & Grievances</h1>
+                           
+                                     <p></p>
+                                     
+                    
+                     <p></p><p></p>
+                    
+                 
+                     <span class="form-table-left text"><div id="div"><p>When completing this form, you may be required to provide authorization and/or patient consent. You will be notified if you have not provided patient consent and it is required to proceed. Neglecting to provide patient consent may result in a delay in the processing of this submission.</p> <p><a class="a" href="https://uhgazure.sharepoint.com/:b:/r/sites/projectmove/Shared%20Documents/09-Forms%20Acceleration/Process%20Maps%20%26%20Mapping%20Files/Appeals%20%26%20Grievance/C%26S%20Provider%20Pre-Service%20Appeals%20and%20Grievances/CS%20UHCCP-AOR-Form.pdf?csf=1&amp;web=1&amp;e=coG4fR">UnitedHealthcare Community Plan Medicaid AOR Form</a></p> <p>To complete this submission, you may be required to provider some or all the following information:</p> <ul> <li style="font-size:14px;">Member ID:</li> <li style="font-size:14px;">Member date of birth:</li> <li style="font-size:14px;">Member Group/Contract #:</li> <li style="font-size:14px;">Authorization/Alert Number (pre-service):</li> <li style="font-size:14px;">Tax Identification Number:</li> <li style="font-size:14px;">National Provider Identification (NPI):<br /><br /></li> </ul> <p>Are you filing a Pre-Service Appeal or a Grievance?<br /><br />&nbsp; &nbsp;&nbsp;&nbsp;<input id="pre-service" name="form" type="radio" value="pre-service" /> Pre-service Appeal</p> <p style="margin-top: -15px;">&nbsp; &nbsp;&nbsp; <input id="Grievance" name="form" type="radio" value="Grievance" /> Grievance</p> <p><input id="check" name="check" type="checkbox" value="check" /> &nbsp; I am requestng a formal appeal of a pre-service decision made by UnitedHealthcare, or I have a complaint</p> </div></span>
+                 </div>
+                 </td>
+                
+             
+             </tr>
+         
+             <span><button class="form-button" id="button" onClick="formAG();" >Start</button></span>  
+</div>			 
+ </div>
+<script>
+document.getElementById("div1").innerHTML= "<div class='richtext ng-star-inserted' tabindex='-1'><p><img src='hand_shake.png'></p><p>Estimate time to complete:</p> </div> <p><img src='access_time.png'>10 - 15 minutes</p> <p>Do not use this form if you are filing a Pre-Service appeal for a Medicaid TennCare Member.</p> <p><strong>How to file a TennCare appeal</strong></p> <p>You can get an appeal page online at tn.gov/tenncare. Click &ldquo;Members/Applicants&rdquo; then click on &ldquo;How to file a medical appeal.&rdquo; Or TennCare can mail you an appeal page. You can call them for free at <strong>1-800-878-3192.</strong></p>"
+function formAG(){
+
+ var radioPreService = document.getElementById("pre-service");
+    var radioGrievance = document.getElementById("Grievance");
+	  var checkbox = document.getElementById("check");
+  
+    var inputElement = document.getElementById('text');
+    console.log(radioPreService.checked);
+    console.log(radioGrievance.checked);
+	if(radioPreService.checked || radioGrievance.checked){
+        if(radioPreService.checked){
+		if (checkbox.checked) {
+      window.open("https://demo.docusign.net/Member/PowerFormSigning.aspx?PowerFormId=fed7b822-9aa3-476c-948a-4c125136dae9&env=demo&acct=c30587ed-91ae-4e54-97c8-3fa9c44a1d24&v=2");
+    }
+    else {
+      alert("Please select checkbox before start");
+    }
+		}
+		
+		else if(radioGrievance.checked){
+		if (checkbox.checked) {
+      window.open("https://demo.docusign.net/Member/PowerFormSigning.aspx?PowerFormId=474c5d22-b743-4c8f-939c-a6b5a0a25c78&env=demo&acct=c30587ed-91ae-4e54-97c8-3fa9c44a1d24&v=2");
+    }
+    else {
+      alert("Please select checkbox before start");
+    }
+		}
+		}
+		else{
+      alert("Please select pre-service/Grievance radio button.");
+        }
+
+}
+</script>
+</body>
+</html>
+
